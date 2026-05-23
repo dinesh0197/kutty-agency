@@ -8,8 +8,8 @@ interface FooterProps {
 
 export default function Footer({ setCurrentPage }: FooterProps) {
   const serviceAreas = [
-    'Erode City', 'Perundurai', 'Gobichettipalayam', 
-    'Bhavani', 'Chithode', 'Kodumudi', 
+    'Erode City', 'Perundurai', 'Gobichettipalayam',
+    'Bhavani', 'Chithode', 'Kodumudi',
     'Modakurichi', 'Sathyamangalam', 'Anthiyur'
   ];
 
@@ -135,7 +135,6 @@ export default function Footer({ setCurrentPage }: FooterProps) {
             <div className="flex items-start space-x-2.5">
               <MapPin className="w-4 h-4 text-sky-500 shrink-0 mt-0.5" />
               <span>
-                <strong>Main Office Yard:</strong><br />
                 {CONTACT_DETAILS.location.fullAddress}
               </span>
             </div>

@@ -70,7 +70,7 @@ export default function Contact({ prefilledMaterial = '' }: ContactProps) {
             Contact Kutty Agency Dispatch Office
           </h2>
           <p className="text-slate-600 mt-3 text-sm sm:text-base">
-            Ready to order? Fill in our quick Erode rate query form or call our yard staff directly. We are open from 6:00 AM to 9:00 PM every day of the week.
+            Ready to order? Fill in our quick Erode rate query form or call our yard staff directly. Our team is available 24 hours a day, 7 days a week to assist you.
           </p>
         </div>
 
@@ -138,7 +138,7 @@ export default function Contact({ prefilledMaterial = '' }: ContactProps) {
                   <div>
                     <h4 className="font-bold text-slate-800 text-sm">Operational Dispatch Hours</h4>
                     <p className="text-slate-500 text-xs mt-1">
-                      6:00 AM - 9:00 PM (Monday to Sunday)
+                      {CONTACT_DETAILS.hours}
                     </p>
                   </div>
                 </div>

@@ -109,7 +109,7 @@ export default function App() {
                             <img
                               src={item.image}
                               alt={item.name}
-                              className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                              className="w-full h-full object-contain p-4 bg-white transition-transform duration-500 hover:scale-105"
                               referrerPolicy="no-referrer"
                             />
                             <span className="absolute top-3 left-3 bg-white/95 text-sky-700 border border-sky-100 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">

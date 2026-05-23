@@ -30,7 +30,7 @@ export const CONTACT_DETAILS = {
   },
 
   // Operational Hours
-  hours: "6:00 AM - 9:00 PM (Monday to Sunday)"
+  hours: "Open 24 Hours, 7 Days a Week"
 };
 
 /**

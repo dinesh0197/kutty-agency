@@ -225,7 +225,7 @@ export default function Materials({ onContactClick }: MaterialsProps) {
                       <img
                         src={item.image}
                         alt={item.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-contain p-4 bg-white group-hover:scale-105 transition-transform duration-300"
                         referrerPolicy="no-referrer"
                         loading="lazy"
                       />
