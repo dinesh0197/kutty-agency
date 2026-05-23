@@ -58,12 +58,12 @@ export default function Header({ currentPage, setCurrentPage }: HeaderProps) {
           onClick={() => handleNavClick('home')} 
           className="flex items-center space-x-3 cursor-pointer text-left focus:outline-hidden"
         >
-          <div className="p-2 bg-sky-600 rounded-lg text-white shadow-md shadow-sky-100 flex items-center justify-center font-bold">
+          {/* <div className="p-2 bg-sky-600 rounded-lg text-white shadow-md shadow-sky-100 flex items-center justify-center font-bold">
             <Building2 className="w-6 h-6" />
-          </div>
+          </div> */}
           <div>
             <span className="block font-display text-2xl font-extrabold tracking-tight text-slate-900 leading-none">
-              KUTTY <span className="text-sky-600">AGENCY</span>
+              <span className="text-sky-600">SHRI KUTTY AGENCIES</span>
             </span>
             <span className="block text-[10px] tracking-widest font-mono text-slate-500 uppercase font-bold mt-1">
               Materials & Transportation
