@@ -63,7 +63,7 @@ export default function Transportation() {
               “100% Correct Time Delivery Assurance”
             </h3>
             <p className="mt-4 text-sky-50 text-sm sm:text-base leading-relaxed">
-              We understand that concrete mixers and laborers charge by the hour. Laying a foundation requires sand and jelly on-site exactly when the crews arrive. Kutty Agency pledges zero delay. If any dispatch fails to depart on schedule, we notify you transparently and absorb the priority freight charges ourselves!
+              We understand that concrete mixers and laborers charge by the hour. Laying a foundation requires sand and jelly on-site exactly when the crews arrive. Shri Kutty Agencies pledges zero delay. If any dispatch fails to depart on schedule, we notify you transparently and absorb the priority freight charges ourselves!
             </p>
             
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-sky-500/30 pt-6">

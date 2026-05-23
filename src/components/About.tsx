@@ -61,7 +61,7 @@ export default function About() {
               A Trusted Construction Materials Partner in Erode
             </h2>
             <p className="text-slate-600 mt-4 text-sm sm:text-base leading-relaxed">
-              Established in 2012 with a single dumper tractor, <strong>Kutty Agency</strong> has grown to become Erode's leading independent construction materials supplier and transport agency. We deal directly with local quarry owners, clay kiln operators and civil organizations.
+              Established in 2012 with a single dumper tractor, <strong>Shri kutty agencies</strong> has grown to become Erode's leading independent construction materials supplier and transport agency. We deal directly with local quarry owners, clay kiln operators and civil organizations.
             </p>
             <p className="text-slate-600 mt-4 text-sm leading-relaxed">
               Serving Perundurai, Gobichettipalayam, Bhavani, and nearby zones, we deliver Crusher Sand, high-compressive masonry Red clay Bricks, structural gravel, and specific basement packing soils. Our primary operating values center around precise volumetric measurement and customer satisfaction.
@@ -174,7 +174,7 @@ export default function About() {
               Key Advantages
             </span>
             <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-slate-900 tracking-tight">
-              Why Customers Choose Kutty Agency
+              Why Customers Choose Shri kutty agencies
             </h3>
             <p className="text-xs sm:text-sm text-slate-500 mt-2">
               Combining 10+ years of operational feedback to deliver an unparalleled local material supply experience.

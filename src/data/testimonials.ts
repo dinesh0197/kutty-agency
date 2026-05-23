@@ -16,7 +16,7 @@ export const USER_TESTIMONIALS: TestimonialItem[] = [
     location: 'Gobichettipalayam, Erode',
     role: 'Builder',
     rating: 5,
-    text: 'Building multi-family apartments requires rigorous material timetables. Kutty Agency\'s 4.0 Unit tippers did three consecutive trips for basement grading soil and clay bricks right on the committed hour. Truly professional drivers.',
+    text: 'Building multi-family apartments requires rigorous material timetables. Shri Kutty Agencies 4.0 Unit tippers did three consecutive trips for basement grading soil and clay bricks right on the committed hour. Truly professional drivers.',
     avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=80'
   },
   {
@@ -25,7 +25,7 @@ export const USER_TESTIMONIALS: TestimonialItem[] = [
     location: 'Erode Town',
     role: 'House Owner',
     rating: 5,
-    text: 'I was building my dream house and was worried about fake river sand. The engineers recommended Kutty Agency\'s plastering P-sand. The quality is outstanding, the plastering has finished extremely smooth, and the price was fair.',
+    text: 'I was building my dream house and was worried about fake river sand. The engineers recommended Shri Kutty Agencies plastering P-sand. The quality is outstanding, the plastering has finished extremely smooth, and the price was fair.',
     avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&h=120&q=80'
   },
   {
@@ -43,7 +43,7 @@ export const USER_TESTIMONIALS: TestimonialItem[] = [
     location: 'Kodumudi, Erode',
     role: 'Contractor',
     rating: 5,
-    text: 'What sets Kutty Agency apart is their own fleet. Other agencies depend on rented trucks, but Kutty Agency owns their delivery trucks in sizes from 0.5 to 7 units. That makes custom orders and immediate site deliveries reliable and cheap.',
+    text: 'What sets Shri Kutty Agencies apart is their own fleet. Other agencies depend on rented trucks, but Shri Kutty Agencies owns their delivery trucks in sizes from 0.5 to 7 units. That makes custom orders and immediate site deliveries reliable and cheap.',
     avatarUrl: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=120&h=120&q=80'
   },
   {

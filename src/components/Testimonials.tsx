@@ -18,7 +18,7 @@ export default function Testimonials() {
             Loved By Erode's Builders & Homeowners
           </h2>
           <p className="text-slate-600 mt-3 text-sm sm:text-base">
-            Read real feedback from independent contractors, regional civil structural builders, and local families who partnered with Kutty Agency for materials and tipper transport.
+            Read real feedback from independent contractors, regional civil structural builders, and local families who partnered with Shri Kutty Agencies for materials and tipper transport.
           </p>
         </div>
 
@@ -100,7 +100,7 @@ export default function Testimonials() {
               </p>
             </div>
             <a
-              href={`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=Hello%20Kutty%20Agency%2C%20I%20am%20a%20contractor%20in%20Erode%20and%20want%20to%20partner%20with%20you%20for%20monthly%20supply.`}
+              href={`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=Hello%Shri%20Kutty%20Agencies%2C%20I%20am%20a%20contractor%20in%20Erode%20and%20want%20to%20partner%20with%20you%20for%20monthly%20supply.`}
               target="_blank"
               rel="noopener noreferrer"
               className="sm:ml-auto bg-slate-900 hover:bg-slate-800 text-white py-2.5 px-5 rounded-lg text-xs font-bold transition-all shrink-0"

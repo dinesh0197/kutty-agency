@@ -101,7 +101,7 @@ export default function Header({ currentPage, setCurrentPage }: HeaderProps) {
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center space-x-4">
           <a
-            href={`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=Hello%20Kutty%20Agency%2C%20I%20am%20looking%20for%20construction%20materials.`}
+            href={`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=Hello%Shri%20Kutty%20Agency%2C%20I%20am%20looking%20for%20construction%20materials.`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-lg text-sm font-bold shadow-md transition-all duration-150"
@@ -164,7 +164,7 @@ export default function Header({ currentPage, setCurrentPage }: HeaderProps) {
               <div className="pt-4 border-t border-slate-100 space-y-3">
                 <div className="flex items-center space-x-2 text-xs text-slate-500 font-medium px-4">
                   <MapPin className="w-4 h-4 text-sky-500" />
-                  <span>Kutty Agency Erode Main Office</span>
+                  <span>Shri Kutty Agencies, Erode Main Office</span>
                 </div>
                 <div className="grid grid-cols-2 gap-3 px-2">
                   <a
@@ -175,7 +175,7 @@ export default function Header({ currentPage, setCurrentPage }: HeaderProps) {
                     <span>Call Staff</span>
                   </a>
                   <a
-                    href={`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=Hello%20Kutty%20Agency%2C%20I%20am%20looking%20for%20construction%20materials.`}
+                    href={`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=Hello%Shri%20Kutty%20Agencies%2C%20I%20am%20looking%20for%20construction%20materials.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-center space-x-2 bg-emerald-600 text-white py-3 rounded-lg text-sm font-bold hover:bg-emerald-700 transition"

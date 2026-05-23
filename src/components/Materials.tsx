@@ -55,7 +55,7 @@ export default function Materials({ onContactClick }: MaterialsProps) {
 
   // Handle WhatsApp Link Generator
   const getWhatsAppLink = (productName: string) => {
-    const text = encodeURIComponent(`Hello Kutty Agency, I need details about "${productName}" including current delivery price to Erode area.`);
+    const text = encodeURIComponent(`Hello Shri Kutty Agencies, I need details about "${productName}" including current delivery price to Erode area.`);
     return `https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=${text}`;
   };
 
@@ -101,7 +101,7 @@ export default function Materials({ onContactClick }: MaterialsProps) {
               <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
                 <div className="flex items-center space-x-2">
                   <span className="p-1 px-2.5 rounded bg-sky-950 text-sky-400 font-mono text-[10px] font-bold">API STAGE 1 READY</span>
-                  <h3 className="text-white font-display text-sm font-bold">Kutty Agency - Headless CMS & Admin Dataset Specs</h3>
+                  <h3 className="text-white font-display text-sm font-bold">Shri Kutty Agencies, Erode Main Office</h3>
                 </div>
                 <div className="flex items-center space-x-3 text-xs text-slate-500">
                   <span>Format: <code>application/json</code></span>

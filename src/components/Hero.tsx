@@ -67,7 +67,7 @@ export default function Hero({ setCurrentPage }: HeroProps) {
   const calculatedWeight = (unitSize * 1.5).toFixed(1);
 
   const getWhatsAppLink = () => {
-    const text = `Hello Kutty Agency! I used your web estimator and would like a price quote for:\n- Material: ${selectedMaterial}\n- Load Volume: ${unitSize} Units (Approx. ${calculatedWeight} Tons)\n- Delivery Area: Erode. Please share active tariff rate.`;
+    const text = `Hello Shri Kutty Agencies! I used your web estimator and would like a price quote for:\n- Material: ${selectedMaterial}\n- Load Volume: ${unitSize} Units (Approx. ${calculatedWeight} Tons)\n- Delivery Area: Erode. Please share active tariff rate.`;
     return `https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=${encodeURIComponent(text)}`;
   };
 

@@ -52,7 +52,7 @@ export default function Contact({ prefilledMaterial = '' }: ContactProps) {
   };
 
   const handleSendToWhatsApp = () => {
-    const text = `Hello Kutty Agency,\n\nI am submitting a material order/quote query:\n- *Name*: ${formData.name}\n- *Phone*: ${formData.phone}\n- *Material Required*: ${formData.materialRequired}\n- *Message*: ${formData.message || 'No additional note'}`;
+    const text = `Hello Shri kutty agencies,\n\nI am submitting a material order/quote query:\n- *Name*: ${formData.name}\n- *Phone*: ${formData.phone}\n- *Material Required*: ${formData.materialRequired}\n- *Message*: ${formData.message || 'No additional note'}`;
     const encText = encodeURIComponent(text);
     window.open(`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=${encText}`, '_blank');
   };
@@ -67,7 +67,7 @@ export default function Contact({ prefilledMaterial = '' }: ContactProps) {
             Get In Touch
           </span>
           <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-brand-900 tracking-tight">
-            Contact Kutty Agency Dispatch Office
+            Contact Shri kutty agencies Dispatch Office
           </h2>
           <p className="text-slate-600 mt-3 text-sm sm:text-base">
             Ready to order? Fill in our quick Erode rate query form or call our yard staff directly. Our team is available 24 hours a day, 7 days a week to assist you.
@@ -154,7 +154,7 @@ export default function Contact({ prefilledMaterial = '' }: ContactProps) {
                   <span>Call Staff Now</span>
                 </a>
                 <a
-                  href={`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=Hello%20Kutty%20Agency%2C%20I%20need%20details%20about%20construction%20materials%20pricing.`}
+                  href={`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=Hello%20Shri%20kutty%20agencies%2C%20I%20need%20details%20about%20construction%20materials%20pricing.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center space-x-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-2 rounded-xl text-xs transition"
@@ -172,7 +172,7 @@ export default function Contact({ prefilledMaterial = '' }: ContactProps) {
               </span>
               <div className="relative w-full h-56 rounded-xl overflow-hidden bg-slate-100 border border-slate-200">
                 <iframe
-                  title="Kutty Agency Erode Location Map"
+                  title="Shri kutty agencies Erode Location Map"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125218.24357778385!2d77.63690186178711!3d11.332070381907722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f4c8430e67b%3A0xe2da205be86c5f7e!2sErode%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1716480000000!5m2!1sen!2sin"
                   width="100%"
                   height="100%"

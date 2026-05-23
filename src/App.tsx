@@ -129,7 +129,7 @@ export default function App() {
                             Ask Price
                           </button>
                           <a
-                            href={`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=Hello%20Kutty%20Agency%2C%20I%20am%20interested%20in%20"${encodeURIComponent(item.name)}"%20for%20my%20site.`}
+                            href={`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=Hello%20Shri%20kutty%20agencies%2C%20I%20am%20interested%20in%20"${encodeURIComponent(item.name)}"%20for%20my%20site.`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="grow text-center bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 rounded-lg transition-colors flex items-center justify-center space-x-1.5 shadow-sm shadow-emerald-600/10"
@@ -156,7 +156,7 @@ export default function App() {
                         Equipped with Our Own Heavy Tipper Cargo Systems
                       </h3>
                       <p className="text-slate-600 mt-5 text-sm leading-relaxed">
-                        To maintain absolute trust, Kutty Agency manages our proprietary fleets. From small 0.5-unit tractors for crowded neighborhood residential alleys, to 7.0-unit dumpers for large commercial developments, we have standard solutions for every Erode budget.
+                        To maintain absolute trust, Shri kutty agencies manages our proprietary fleets. From small 0.5-unit tractors for crowded neighborhood residential alleys, to 7.0-unit dumpers for large commercial developments, we have standard solutions for every Erode budget.
                       </p>
                       
                       <div className="mt-8 space-y-4">
@@ -221,7 +221,7 @@ export default function App() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                   <div className="text-center max-w-2xl mx-auto mb-16">
                     <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-slate-900 tracking-tight">
-                      Why Choose Kutty Construction?
+                      Why Choose Shri kutty agencies?
                     </h3>
                   </div>
 

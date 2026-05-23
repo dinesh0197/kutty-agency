@@ -15,7 +15,7 @@ export default function FloatingWhatsApp() {
     return () => clearTimeout(timer);
   }, []);
 
-  const whatsappUrl = getWhatsAppUrl("Hello Kutty Agency, I need construction materials details.");
+  const whatsappUrl = getWhatsAppUrl("Hello Shri kutty agencies, I need construction materials details.");
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-2">

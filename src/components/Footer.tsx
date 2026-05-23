@@ -45,7 +45,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
                 <span>Call {CONTACT_DETAILS.phonePrimary.display}</span>
               </a>
               <a
-                href={`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=Hello%20Kutty%20Agency%2C%20I%20am%20looking%20for%20construction%20materials.`}
+                href={`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=Hello%Shri%20kutty%20agencies%2C%20I%20am%20looking%20for%20construction%20materials.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg text-sm font-bold shadow-md transition-colors"
@@ -69,7 +69,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
               <Building2 className="w-5 h-5" />
             </div>
             <span className="font-display text-xl font-black tracking-tight uppercase">
-              KUTTY <span className="text-sky-500">AGENCY</span>
+              SHRI <span className="text-sky-500">KUTTY AGENCY</span>
             </span>
           </div>
           <p className="text-sm text-slate-400 leading-relaxed">
