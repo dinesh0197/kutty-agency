@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Search, SlidersHorizontal, ArrowUpDown, ShieldCheck, HelpCircle, Code, Eye, RefreshCw, Layers } from 'lucide-react';
 import { INITIAL_MATERIALS, SAMPLE_MATERIALS_JSON } from '../data/materials';
-import { MaterialItem, MaterialCategory } from '../types';
+// import { MaterialItem, MaterialCategory } from '../types';
 import { motion, AnimatePresence } from 'motion/react';
 import { CONTACT_DETAILS } from '../data/contact';
 
@@ -16,7 +16,7 @@ export default function Materials({ onContactClick }: MaterialsProps) {
   const [showApiDoc, setShowApiDoc] = useState(false);
 
   // Categories list
-  const categories: string[] = ['All', 'Cement', 'Sand', 'Jelly Stones', 'Bricks', 'Soil Filling', 'Aggregates'];
+  const categories: string[] = ['All', 'Cement', 'Sand', 'Jelly Stones', 'Bricks'];
 
   // Filter & Sort Logic
   const filteredAndSortedMaterials = useMemo(() => {
@@ -62,7 +62,7 @@ export default function Materials({ onContactClick }: MaterialsProps) {
   return (
     <section id="materials-section" className="py-16 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Page title and description wrapper */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-sky-600 font-mono text-xs font-bold tracking-widest uppercase block mb-2">
@@ -107,7 +107,7 @@ export default function Materials({ onContactClick }: MaterialsProps) {
                   <span>Format: <code>application/json</code></span>
                 </div>
               </div>
-              
+
               <p className="text-xs text-slate-400 mb-4 leading-relaxed">
                 This app is ready to link with any Node/Express or headless dashboard. Below is the type-safe static schema format used in the frontend. Admin panel forms will POST directly to <code>/api/materials</code> to update this database in real-time.
               </p>
@@ -141,7 +141,7 @@ export default function Materials({ onContactClick }: MaterialsProps) {
         {/* Dynamic Controls Bar: Search, Category, Sorting */}
         <div className="bg-white p-4 sm:p-6 rounded-2xl border border-slate-100 shadow-xs mb-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
-            
+
             {/* Search Input bar */}
             <div className="lg:col-span-5 relative">
               <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4.5 h-4.5 text-slate-400" />
@@ -159,7 +159,7 @@ export default function Materials({ onContactClick }: MaterialsProps) {
               <Layers className="w-4 h-4 text-sky-500" />
               <span>Category Filter:</span>
             </div>
-            
+
             {/* Sorting controls dropdown */}
             <div className="lg:col-span-3 flex items-center space-x-2">
               <ArrowUpDown className="w-4.5 h-4.5 text-slate-400 shrink-0" />
@@ -189,11 +189,10 @@ export default function Materials({ onContactClick }: MaterialsProps) {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-4.5 py-2.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                    isSelected
-                      ? 'bg-sky-600 text-white shadow-md shadow-sky-100'
-                      : 'bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-sky-900'
-                  }`}
+                  className={`px-4.5 py-2.5 rounded-full text-xs font-bold transition-all cursor-pointer ${isSelected
+                    ? 'bg-sky-600 text-white shadow-md shadow-sky-100'
+                    : 'bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-sky-900'
+                    }`}
                 >
                   {cat === 'All' ? '🗂️ View All' : cat}
                 </button>
@@ -205,7 +204,7 @@ export default function Materials({ onContactClick }: MaterialsProps) {
         {/* Products Listing Grid */}
         <AnimatePresence mode="popLayout">
           {filteredAndSortedMaterials.length > 0 ? (
-            <motion.div 
+            <motion.div
               layout
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
             >
@@ -229,19 +228,18 @@ export default function Materials({ onContactClick }: MaterialsProps) {
                         referrerPolicy="no-referrer"
                         loading="lazy"
                       />
-                      
+
                       {/* Category Label Overlay */}
                       <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-xs text-sky-700 border border-slate-100 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
                         {item.category}
                       </span>
 
                       {/* Stock availability badge */}
-                      <span className={`absolute bottom-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded-md shadow-sm ${
-                        item.availability === 'In Stock' ? 'bg-emerald-500 text-white' :
+                      <span className={`absolute bottom-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded-md shadow-sm ${item.availability === 'In Stock' ? 'bg-emerald-500 text-white' :
                         item.availability === 'Fast Delivery' ? 'bg-sky-500 text-white' :
-                        item.availability === 'Pre-Order' ? 'bg-amber-500 text-slate-900' :
-                        'bg-red-500 text-white'
-                      }`}>
+                          item.availability === 'Pre-Order' ? 'bg-amber-500 text-slate-900' :
+                            'bg-red-500 text-white'
+                        }`}>
                         {item.availability}
                       </span>
                     </div>
@@ -249,7 +247,7 @@ export default function Materials({ onContactClick }: MaterialsProps) {
                     {/* Content Details */}
                     <div className="p-5">
                       <h3 className="font-display font-bold text-slate-900 text-base group-hover:text-sky-600 transition-colors">
-                        {item.name}
+                        {item.name.replace(/^z/i, '')}
                       </h3>
                       <p className="text-slate-500 text-xs mt-2 leading-relaxed min-h-[48px]">
                         {item.description}

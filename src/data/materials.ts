@@ -28,14 +28,14 @@ export const SAMPLE_MATERIALS_JSON = JSON.stringify([
     "availability": "Limited Stock",
     "image": "/materials/river_sand.webp"
   },
-  {
-    "id": "mat-crusher-sand",
-    "name": "Screened Crusher Sand",
-    "category": "Sand",
-    "description": "Affordable crusher dust sand screened for structural floor leveling, sub-base filling, and heavy structural backfills.",
-    "availability": "In Stock",
-    "image": "https://images.unsplash.com/photo-1531834685032-c34bf0d8b2d1?auto=format&fit=crop&w=600&q=80"
-  },
+  // {
+  //   "id": "mat-crusher-sand",
+  //   "name": "Screened Crusher Sand",
+  //   "category": "Sand",
+  //   "description": "Affordable crusher dust sand screened for structural floor leveling, sub-base filling, and heavy structural backfills.",
+  //   "availability": "In Stock",
+  //   "image": "https://images.unsplash.com/photo-1531834685032-c34bf0d8b2d1?auto=format&fit=crop&w=600&q=80"
+  // },
   {
     "id": "mat-6mm-jelly",
     "name": "6mm Jelly Stones (Blue Metal)",
@@ -62,7 +62,7 @@ export const SAMPLE_MATERIALS_JSON = JSON.stringify([
   },
   {
     "id": "mat-crusher-stones",
-    "name": "Heavy Crusher Stones (Rubble)",
+    "name": "Heavy Crusher Stones (Rubble) or RR stone",
     "category": "Jelly Stones",
     "description": "Large irregular crusher stones suitable for building secure retaining walls, strong stone foundations, and land barriers.",
     "availability": "In Stock",
@@ -74,39 +74,39 @@ export const SAMPLE_MATERIALS_JSON = JSON.stringify([
     "category": "Bricks",
     "description": "Locally baked structural red clay bricks with premium compressive strength, optimal thermal insulation, and minimal water absorbency.",
     "availability": "Fast Delivery",
-    "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80"
+    "image": "/materials/redbrick.webp"
   },
   {
     "id": "mat-soil-basement",
-    "name": "Coarse Basement Filling Soil",
-    "category": "Soil Filling",
+    "name": "zBasement Filling Soil",
+    "category": "Sand",
     "description": "High-density structural filling soil, perfect for packing and compacting inside newly cast concrete building basements.",
     "availability": "In Stock",
     "image": "/materials/basement_filling_soil.webp"
   },
   {
     "id": "mat-soil-red",
-    "name": "Organic Red Horticultural Soil",
-    "category": "Soil Filling",
+    "name": "zGarding soil or Red soil",
+    "category": "Sand",
     "description": "Premium iron-rich fine red ground soil, optimal for landscaping, rooftop/backyard gardens, and farm leveling around Erode.",
     "availability": "Pre-Order",
     "image": "/materials/organic_red_soil.webp"
   },
-  {
-    "id": "mat-soil-grading",
-    "name": "Dense Foundation Grading Soil",
-    "category": "Soil Filling",
-    "description": "Premium gravel-blend heavy grading soil for establishing level compounds and sturdy sub-base foundation profiles.",
-    "availability": "In Stock",
-    "image": "https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?auto=format&fit=crop&w=600&q=80"
-  },
+  // {
+  //   "id": "mat-soil-grading",
+  //   "name": "Dense Foundation Grading Soil",
+  //   "category": "Soil Filling",
+  //   "description": "Premium gravel-blend heavy grading soil for establishing level compounds and sturdy sub-base foundation profiles.",
+  //   "availability": "In Stock",
+  //   "image": "https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?auto=format&fit=crop&w=600&q=80"
+  // },
   {
     "id": "mat-mix-aggregates",
     "name": "Mixed Structural Blue Metal Aggregates",
     "category": "Aggregates",
     "description": "Premium blended grading aggregates for high-efficiency concrete batches, civil infrastructure work, and rural roads packing.",
     "availability": "Fast Delivery",
-    "image": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80"
+    "image": ""
   },
   {
     "id": "mat-cement-ramco",
@@ -146,7 +146,7 @@ export const SAMPLE_MATERIALS_JSON = JSON.stringify([
     "category": "Cement",
     "description": "Reliable cement solution for general-purpose construction, plastering, and masonry work.",
     "availability": "In Stock",
-    "image": "/materials/Priya cement.webp"
+    "image": "/materials/priya cement.webp"
   },
   {
     "id": "mat-bricks-flyash",
@@ -162,7 +162,7 @@ export const SAMPLE_MATERIALS_JSON = JSON.stringify([
     "category": "Bricks",
     "description": "High-adhesion tile fixing paste and smooth wall patty for flawless surface finishing.",
     "availability": "In Stock",
-    "image": "/materials/tile paste & wall patty paste.webp"
+    "image": "/materials/ramco tile fix.webp"
   },
   {
     "id": "mat-bricks-hollow-6",
@@ -170,7 +170,7 @@ export const SAMPLE_MATERIALS_JSON = JSON.stringify([
     "category": "Bricks",
     "description": "Sturdy 6-inch hollow and solid concrete blocks for fast, cost-effective wall construction.",
     "availability": "In Stock",
-    "image": "/materials/Soild & Hollow bricks.webp"
+    "image": "/materials/solid bricks 4 & 6.webp"
   },
   {
     "id": "mat-bricks-hollow-4",
@@ -178,7 +178,7 @@ export const SAMPLE_MATERIALS_JSON = JSON.stringify([
     "category": "Bricks",
     "description": "4-inch solid and hollow blocks ideal for partition walls and non-load-bearing structures.",
     "availability": "In Stock",
-    "image": "/materials/Soild & Hollow bricks.webp"
+    "image": "/materials/solid bricks 4 & 6.webp"
   }
 ], null, 2);
 
