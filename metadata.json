@@ -1,0 +1,6 @@
+{
+  "name": "Kutty Agency",
+  "description": "Kutty Agency is an Erode-based premium construction materials supplier & transporter delivering high-quality Crusher Sand, M-Sand, Bricks, Jelly stones, & soil filling across Tamil Nadu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
