@@ -3,6 +3,7 @@ import { Search, SlidersHorizontal, ArrowUpDown, ShieldCheck, HelpCircle, Code, 
 import { INITIAL_MATERIALS, SAMPLE_MATERIALS_JSON } from '../data/materials';
 import { MaterialItem, MaterialCategory } from '../types';
 import { motion, AnimatePresence } from 'motion/react';
+import { CONTACT_DETAILS } from '../data/contact';
 
 interface MaterialsProps {
   onContactClick: (productName: string) => void;
@@ -15,7 +16,7 @@ export default function Materials({ onContactClick }: MaterialsProps) {
   const [showApiDoc, setShowApiDoc] = useState(false);
 
   // Categories list
-  const categories: string[] = ['All', 'Sand', 'Jelly Stones', 'Bricks', 'Soil Filling', 'Aggregates'];
+  const categories: string[] = ['All', 'Cement', 'Sand', 'Jelly Stones', 'Bricks', 'Soil Filling', 'Aggregates'];
 
   // Filter & Sort Logic
   const filteredAndSortedMaterials = useMemo(() => {
@@ -55,7 +56,7 @@ export default function Materials({ onContactClick }: MaterialsProps) {
   // Handle WhatsApp Link Generator
   const getWhatsAppLink = (productName: string) => {
     const text = encodeURIComponent(`Hello Kutty Agency, I need details about "${productName}" including current delivery price to Erode area.`);
-    return `https://wa.me/919750847898?text=${text}`;
+    return `https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=${text}`;
   };
 
   return (
@@ -332,7 +333,7 @@ export default function Materials({ onContactClick }: MaterialsProps) {
             </div>
             <div className="lg:col-span-4 flex justify-start lg:justify-end">
               <a
-                href="https://wa.me/919750847898?text=Hello%20Kutty%20Agency%2C%20I%20need%20help%20calculating%20how%20much%20materials%20I%20need%20to%20order."
+                href={`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=Hello%20Kutty%20Agency%2C%20I%20need%20help%20calculating%20how%20much%20materials%20I%20need%20to%20order.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-2 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-bold px-6 py-3.5 rounded-xl shadow-md transition"

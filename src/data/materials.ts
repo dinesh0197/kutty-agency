@@ -107,6 +107,78 @@ export const SAMPLE_MATERIALS_JSON = JSON.stringify([
     "description": "Premium blended grading aggregates for high-efficiency concrete batches, civil infrastructure work, and rural roads packing.",
     "availability": "Fast Delivery",
     "image": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "mat-cement-ramco",
+    "name": "Ramco Cement",
+    "category": "Cement",
+    "description": "Premium blended cement offering superior strength and durability for all construction needs.",
+    "availability": "In Stock",
+    "image": "/materials/Ramco cement.webp"
+  },
+  {
+    "id": "mat-cement-ultratech",
+    "name": "Ultratech Cement",
+    "category": "Cement",
+    "description": "High-quality engineered cement that provides excellent workability and long-term structural integrity.",
+    "availability": "In Stock",
+    "image": "/materials/ultratech cement.webp"
+  },
+  {
+    "id": "mat-cement-dalmia",
+    "name": "Dalmia Cement",
+    "category": "Cement",
+    "description": "Trusted cement brand known for quick setting time and exceptional compressive strength.",
+    "availability": "In Stock",
+    "image": "/materials/dalmia cement.webp"
+  },
+  {
+    "id": "mat-cement-jsw",
+    "name": "JSW Cement",
+    "category": "Cement",
+    "description": "Eco-friendly slag cement offering great resistance against chemical attacks and improved finish.",
+    "availability": "Fast Delivery",
+    "image": "/materials/Jsw cement.webp"
+  },
+  {
+    "id": "mat-cement-priya",
+    "name": "Priya Cement",
+    "category": "Cement",
+    "description": "Reliable cement solution for general-purpose construction, plastering, and masonry work.",
+    "availability": "In Stock",
+    "image": "/materials/Priya cement.webp"
+  },
+  {
+    "id": "mat-bricks-flyash",
+    "name": "Flyash Bricks",
+    "category": "Bricks",
+    "description": "Eco-friendly, lightweight flyash bricks with uniform shape and excellent thermal insulation.",
+    "availability": "In Stock",
+    "image": "/materials/flyash brick.webp"
+  },
+  {
+    "id": "mat-bricks-paste",
+    "name": "Tile Paste & Wall Patty Paste",
+    "category": "Bricks",
+    "description": "High-adhesion tile fixing paste and smooth wall patty for flawless surface finishing.",
+    "availability": "In Stock",
+    "image": "/materials/tile paste & wall patty paste.webp"
+  },
+  {
+    "id": "mat-bricks-hollow-6",
+    "name": "Solid & Hollow Bricks (6\")",
+    "category": "Bricks",
+    "description": "Sturdy 6-inch hollow and solid concrete blocks for fast, cost-effective wall construction.",
+    "availability": "In Stock",
+    "image": "/materials/Soild & Hollow bricks.webp"
+  },
+  {
+    "id": "mat-bricks-hollow-4",
+    "name": "Solid & Hollow Bricks (4\")",
+    "category": "Bricks",
+    "description": "4-inch solid and hollow blocks ideal for partition walls and non-load-bearing structures.",
+    "availability": "In Stock",
+    "image": "/materials/Soild & Hollow bricks.webp"
   }
 ], null, 2);
 

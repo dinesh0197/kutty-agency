@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, Phone, Building2, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { CONTACT_DETAILS } from '../data/contact';
 
 interface HeaderProps {
   currentPage: string;
@@ -42,9 +43,9 @@ export default function Header({ currentPage, setCurrentPage }: HeaderProps) {
           </div>
           <div className="flex items-center space-x-3">
             <span>Direct Order Helper:</span>
-            <a href="tel:+919750847898" className="flex items-center space-x-1 text-white hover:text-sky-300 transition-colors">
+            <a href={`tel:${CONTACT_DETAILS.phonePrimary.tel}`} className="flex items-center space-x-1 text-white hover:text-sky-300 transition-colors">
               <Phone className="w-3" />
-              <span>+91 97508 47898</span>
+              <span>{CONTACT_DETAILS.phonePrimary.display}</span>
             </a>
           </div>
         </div>
@@ -100,7 +101,7 @@ export default function Header({ currentPage, setCurrentPage }: HeaderProps) {
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center space-x-4">
           <a
-            href="https://wa.me/919750847898?text=Hello%20Kutty%20Agency%2C%20I%20am%20looking%20for%20construction%20materials."
+            href={`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=Hello%20Kutty%20Agency%2C%20I%20am%20looking%20for%20construction%20materials.`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-lg text-sm font-bold shadow-md transition-all duration-150"
@@ -116,7 +117,7 @@ export default function Header({ currentPage, setCurrentPage }: HeaderProps) {
         <div className="flex lg:hidden items-center space-x-2">
           {/* Quick mobile phone link */}
           <a
-            href="tel:+919750847898"
+            href={`tel:${CONTACT_DETAILS.phonePrimary.tel}`}
             className="p-2 text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors flex items-center justify-center"
             title="Call Us Now"
           >
@@ -167,14 +168,14 @@ export default function Header({ currentPage, setCurrentPage }: HeaderProps) {
                 </div>
                 <div className="grid grid-cols-2 gap-3 px-2">
                   <a
-                    href="tel:+919750847898"
+                    href={`tel:${CONTACT_DETAILS.phonePrimary.tel}`}
                     className="w-full flex items-center justify-center space-x-2 bg-sky-600 text-white py-3 rounded-lg text-sm font-bold hover:bg-sky-700 transition"
                   >
                     <Phone className="w-4 h-4" />
                     <span>Call Staff</span>
                   </a>
                   <a
-                    href="https://wa.me/919750847898?text=Hello%20Kutty%20Agency%2C%20I%20am%20looking%20for%20construction%20materials."
+                    href={`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=Hello%20Kutty%20Agency%2C%20I%20am%20looking%20for%20construction%20materials.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-center space-x-2 bg-emerald-600 text-white py-3 rounded-lg text-sm font-bold hover:bg-emerald-700 transition"

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Building2, Phone, Mail, MapPin, Clock, ArrowRight, Shield } from 'lucide-react';
+import { CONTACT_DETAILS } from '../data/contact';
 
 interface FooterProps {
   setCurrentPage: (page: string) => void;
@@ -37,14 +38,14 @@ export default function Footer({ setCurrentPage }: FooterProps) {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-start md:justify-end">
               <a
-                href="tel:+919750847898"
+                href={`tel:${CONTACT_DETAILS.phonePrimary.tel}`}
                 className="flex items-center justify-center space-x-2 bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-lg text-sm font-bold shadow-md transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                <span>Call +91 97508 47898</span>
+                <span>Call {CONTACT_DETAILS.phonePrimary.display}</span>
               </a>
               <a
-                href="https://wa.me/919750847898?text=Hello%20Kutty%20Agency%2C%20I%20am%20looking%20for%20construction%20materials."
+                href={`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=Hello%20Kutty%20Agency%2C%20I%20am%20looking%20for%20construction%20materials.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg text-sm font-bold shadow-md transition-colors"
@@ -135,21 +136,20 @@ export default function Footer({ setCurrentPage }: FooterProps) {
               <MapPin className="w-4 h-4 text-sky-500 shrink-0 mt-0.5" />
               <span>
                 <strong>Main Office Yard:</strong><br />
-                Kutty Agency, Perundurai Road,<br />
-                Erode - 638011, Tamil Nadu, India
+                {CONTACT_DETAILS.location.fullAddress}
               </span>
             </div>
             <div className="flex items-center space-x-2.5">
               <Phone className="w-4 h-4 text-sky-500" />
-              <span>+91 97508 47898</span>
+              <span>{CONTACT_DETAILS.phonePrimary.display}</span>
             </div>
             <div className="flex items-center space-x-2.5">
               <Mail className="w-4 h-4 text-sky-500" />
-              <span>orders@kuttyagencyerode.com</span>
+              <span>{CONTACT_DETAILS.email}</span>
             </div>
             <div className="flex items-center space-x-2.5">
               <Clock className="w-4 h-4 text-sky-500" />
-              <span>6:00 AM - 9:00 PM (Everyday)</span>
+              <span>{CONTACT_DETAILS.hours}</span>
             </div>
           </div>
         </div>

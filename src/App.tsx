@@ -13,6 +13,7 @@ import { VEHICLE_FLEET } from './data/vehicles';
 import { USER_TESTIMONIALS } from './data/testimonials';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronRight, ArrowRight, Star, ShieldCheck, Mail, Phone, Calendar, Clock, Sparkles, BadgeCheck, Factory, Route } from 'lucide-react';
+import { CONTACT_DETAILS } from './data/contact';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<string>('home');
@@ -128,7 +129,7 @@ export default function App() {
                             Ask Price
                           </button>
                           <a
-                            href={`https://wa.me/919443212345?text=Hello%20Kutty%20Agency%2C%20I%20am%20interested%20in%20"${encodeURIComponent(item.name)}"%20for%20my%20site.`}
+                            href={`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=Hello%20Kutty%20Agency%2C%20I%20am%20interested%20in%20"${encodeURIComponent(item.name)}"%20for%20my%20site.`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="grow text-center bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 rounded-lg transition-colors flex items-center justify-center space-x-1.5 shadow-sm shadow-emerald-600/10"

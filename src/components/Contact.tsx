@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, MessageSquare, CheckCircle, Clock } from 'lucide-react';
 import { motion } from 'motion/react';
-
+import { CONTACT_DETAILS } from '../data/contact';
 interface ContactProps {
   prefilledMaterial?: string;
 }
@@ -54,7 +54,7 @@ export default function Contact({ prefilledMaterial = '' }: ContactProps) {
   const handleSendToWhatsApp = () => {
     const text = `Hello Kutty Agency,\n\nI am submitting a material order/quote query:\n- *Name*: ${formData.name}\n- *Phone*: ${formData.phone}\n- *Material Required*: ${formData.materialRequired}\n- *Message*: ${formData.message || 'No additional note'}`;
     const encText = encodeURIComponent(text);
-    window.open(`https://wa.me/919443212345?text=${encText}`, '_blank');
+    window.open(`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=${encText}`, '_blank');
   };
 
   return (
@@ -91,9 +91,7 @@ export default function Contact({ prefilledMaterial = '' }: ContactProps) {
                   <div>
                     <h4 className="font-bold text-slate-800 text-sm">Business Location</h4>
                     <p className="text-slate-500 text-xs mt-1 leading-relaxed">
-                      Kutty Agency Office & Yard,<br />
-                      Perundurai Central Highway Road,<br />
-                      Erode - 638011, Tamil Nadu, India.
+                      {CONTACT_DETAILS.location.fullAddress}
                     </p>
                     <span className="mt-1 inline-block text-[10px] bg-blue-100 text-blue-800 font-bold px-2 py-0.5 rounded leading-none uppercase">
                       Serving Erode & Near Districts
@@ -111,11 +109,11 @@ export default function Contact({ prefilledMaterial = '' }: ContactProps) {
                       Instant support phone booking channel:
                     </p>
                     <div className="mt-2 space-y-1.5">
-                      <a href="tel:+919443212345" className="block text-brand-600 font-display font-extrabold text-sm hover:underline">
-                        📞 +91 94432 12345 (Main Coordinator)
+                      <a href={`tel:${CONTACT_DETAILS.phonePrimary.tel}`} className="block text-brand-600 font-display font-extrabold text-sm hover:underline">
+                        📞 {CONTACT_DETAILS.phonePrimary.display} (Main Coordinator)
                       </a>
-                      <a href="tel:+919876543210" className="block text-slate-600 font-display text-xs hover:underline">
-                        📞 +91 94432 12346 (Fleet Manager)
+                      <a href={`tel:${CONTACT_DETAILS.phoneSecondary.tel}`} className="block text-slate-600 font-display text-xs hover:underline">
+                        📞 {CONTACT_DETAILS.phoneSecondary.display} (Fleet Manager)
                       </a>
                     </div>
                   </div>
@@ -128,7 +126,7 @@ export default function Contact({ prefilledMaterial = '' }: ContactProps) {
                   <div>
                     <h4 className="font-bold text-slate-800 text-sm">Email Address</h4>
                     <p className="text-slate-500 text-xs mt-1 font-semibold hover:underline cursor-pointer">
-                      orders@kuttyagencyerode.com
+                      {CONTACT_DETAILS.email}
                     </p>
                   </div>
                 </div>
@@ -149,14 +147,14 @@ export default function Contact({ prefilledMaterial = '' }: ContactProps) {
               {/* Direct call call-to-actions */}
               <div className="pt-6 border-t border-slate-100 grid grid-cols-2 gap-3">
                 <a
-                  href="tel:+919443212345"
+                  href={`tel:${CONTACT_DETAILS.phonePrimary.tel}`}
                   className="flex items-center justify-center space-x-1.5 bg-brand-600 hover:bg-brand-700 text-white font-bold py-3.5 px-2 rounded-xl text-xs transition"
                 >
                   <Phone className="w-4 h-4" />
                   <span>Call Staff Now</span>
                 </a>
                 <a
-                  href="https://wa.me/919443212345?text=Hello%20Kutty%20Agency%2C%20I%20need%20details%20about%20construction%20materials%20pricing."
+                  href={`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=Hello%20Kutty%20Agency%2C%20I%20need%20details%20about%20construction%20materials%20pricing.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center space-x-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-2 rounded-xl text-xs transition"

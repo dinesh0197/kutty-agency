@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ShieldCheck, Truck, Clock, MapPin, ArrowRight, Sparkles, HelpCircle, FileText } from 'lucide-react';
 import { motion, useScroll, useTransform, useSpring } from 'motion/react';
+import { CONTACT_DETAILS } from '../data/contact';
 
 interface HeroProps {
   setCurrentPage: (page: string) => void;
@@ -67,7 +68,7 @@ export default function Hero({ setCurrentPage }: HeroProps) {
 
   const getWhatsAppLink = () => {
     const text = `Hello Kutty Agency! I used your web estimator and would like a price quote for:\n- Material: ${selectedMaterial}\n- Load Volume: ${unitSize} Units (Approx. ${calculatedWeight} Tons)\n- Delivery Area: Erode. Please share active tariff rate.`;
-    return `https://wa.me/919750847898?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=${encodeURIComponent(text)}`;
   };
 
   return (

@@ -2,6 +2,7 @@ import React from 'react';
 import { Quote, Star, ThumbsUp } from 'lucide-react';
 import { USER_TESTIMONIALS } from '../data/testimonials';
 import { motion } from 'motion/react';
+import { CONTACT_DETAILS } from '../data/contact';
 
 export default function Testimonials() {
   return (
@@ -99,7 +100,7 @@ export default function Testimonials() {
               </p>
             </div>
             <a
-              href="https://wa.me/919750847898?text=Hello%20Kutty%20Agency%2C%20I%20am%20a%20contractor%20in%20Erode%20and%20want%20to%20partner%20with%20you%20for%20monthly%20supply."
+              href={`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=Hello%20Kutty%20Agency%2C%20I%20am%20a%20contractor%20in%20Erode%20and%20want%20to%20partner%20with%20you%20for%20monthly%20supply.`}
               target="_blank"
               rel="noopener noreferrer"
               className="sm:ml-auto bg-slate-900 hover:bg-slate-800 text-white py-2.5 px-5 rounded-lg text-xs font-bold transition-all shrink-0"

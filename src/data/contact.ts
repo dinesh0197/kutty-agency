@@ -11,21 +11,21 @@ export const CONTACT_DETAILS = {
   
   // Secondary Fleet Manager
   phoneSecondary: {
-    display: "+91 97508 47899",
-    raw: "919750847899",
-    tel: "+919750847899"
+    display: "+91 87785 84460",
+    raw: "918778584460",
+    tel: "+918778584460"
   },
 
   // Email
-  email: "orders@kuttyagencyerode.com",
+  email: "shrikuttyagencies@gmail.com",
 
   // Location & Address
   location: {
     city: "Erode",
     state: "Tamil Nadu",
     district: "Erode District",
-    fullAddress: "Kutty Agency Office & Yard, Perundurai Central Highway Road, Erode - 638011, Tamil Nadu, India",
-    displayShort: "Perundurai Road, Erode - 638011",
+    fullAddress: "Raghupathi Naicken Palayam, Ring road, Anaikalpalayam ,Erode -638002",
+    displayShort: "Anaikalpalayam, Erode - 638002",
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125218.24357778385!2d77.63690186178711!3d11.332070381907722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f4c8430e67b%3A0xe2da205be86c5f7e!2sErode%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1716480000000!5m2!1sen!2sin"
   },
 
