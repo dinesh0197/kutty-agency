@@ -12,12 +12,23 @@ import { INITIAL_MATERIALS } from './data/materials';
 import { VEHICLE_FLEET } from './data/vehicles';
 import { USER_TESTIMONIALS } from './data/testimonials';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronRight, ArrowRight, Star, ShieldCheck, Mail, Phone, Calendar, Clock, Sparkles, BadgeCheck, Factory, Route } from 'lucide-react';
+import { ChevronRight, ChevronLeft, MessageSquare, ArrowRight, Star, ShieldCheck, Mail, Phone, Calendar, Clock, Sparkles, BadgeCheck, Factory, Route } from 'lucide-react';
 import { CONTACT_DETAILS } from './data/contact';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<string>('home');
   const [inquiredProduct, setInquiredProduct] = useState<string>('');
+  const [carouselIndex, setCarouselIndex] = useState(0);
+
+  // Curate one item from each of the 5 categories for the home page showcase
+  const featuredMaterials = React.useMemo(() => {
+    const sandItem = INITIAL_MATERIALS.find(m => m.category === 'Sand');
+    const aggregatesItem = INITIAL_MATERIALS.find(m => m.category === 'Aggregates');
+    const bricksItem = INITIAL_MATERIALS.find(m => m.category === 'Bricks');
+    const cementItem = INITIAL_MATERIALS.find(m => m.category === 'Cement');
+    const puttyItem = INITIAL_MATERIALS.find(m => m.category === 'Wall Putty');
+    return [sandItem, aggregatesItem, bricksItem, cementItem, puttyItem].filter((item): item is typeof INITIAL_MATERIALS[0] => !!item);
+  }, []);
 
   // Handle URL hash deep-link on mount and on hash changes
   useEffect(() => {
@@ -36,6 +47,21 @@ export default function App() {
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
+
+  // Auto-play the materials carousel every 5 seconds (desktop only)
+  useEffect(() => {
+    if (currentPage !== 'home') return;
+
+    const interval = setInterval(() => {
+      setCarouselIndex((prevIndex) => {
+        const maxIndex = featuredMaterials.length - 3;
+        if (maxIndex <= 0) return 0;
+        return prevIndex >= maxIndex ? 0 : prevIndex + 1;
+      });
+    }, 5000); // 5 seconds
+
+    return () => clearInterval(interval);
+  }, [currentPage, featuredMaterials.length]);
 
   // Set selected material name for quick inquiry forms and bounce user to Contact tab
   const handleMaterialInquiry = (productName: string) => {
@@ -64,7 +90,7 @@ export default function App() {
               <Hero setCurrentPage={setCurrentPage} />
 
               {/* Direct Promo Category Teaser Section */}
-              <section className="py-20 bg-slate-50/50 border-t border-slate-150 relative">
+              <section className="py-20 bg-slate-50/50 relative overflow-hidden">
                 <div className="absolute top-0 left-1/3 w-[300px] h-[300px] bg-sky-50 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                   <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
@@ -73,58 +99,143 @@ export default function App() {
                         Materials Catalog
                       </span>
                       <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-slate-900 tracking-tight">
-                        Popular Construction Aggregates
+                        Quality-Inspected Base Materials
                       </h2>
                       <p className="text-slate-500 text-xs sm:text-sm mt-2 max-w-xl">
-                        Clean, quality-inspected bricks, plastering sands, and gravel aggregates delivered directly with digital weight slips.
+                        A curated range featuring one premium selection from each of our major building categories: Sand, Aggregates, Bricks, Cement, and Wall Putty.
                       </p>
                     </div>
-                    <button
-                      onClick={() => {
-                        setCurrentPage('materials');
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                        window.location.hash = 'materials';
-                      }}
-                      className="mt-4 md:mt-0 inline-flex items-center space-x-1.5 text-sm font-bold text-sky-600 hover:text-sky-700 transition group"
-                    >
-                      <span>Explore all 13 products</span>
-                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
+
+                    <div className="flex flex-wrap items-center gap-6 mt-6 md:mt-0 w-full md:w-auto justify-between md:justify-end">
+                      {/* Desktop Carousel Controls */}
+                      <div className="hidden md:flex items-center space-x-2">
+                        <button
+                          onClick={() => setCarouselIndex(prev => Math.max(0, prev - 1))}
+                          disabled={carouselIndex === 0}
+                          className={`p-2.5 rounded-xl border border-slate-200 transition-all ${carouselIndex === 0
+                              ? 'bg-slate-100 text-slate-300 cursor-not-allowed opacity-50'
+                              : 'bg-white text-slate-800 hover:bg-slate-50 hover:border-sky-300 shadow-xs cursor-pointer'
+                            }`}
+                          title="Previous Material"
+                          aria-label="Previous Material"
+                        >
+                          <ChevronLeft className="w-5 h-5" />
+                        </button>
+                        <button
+                          onClick={() => setCarouselIndex(prev => Math.min(featuredMaterials.length - 3, prev + 1))}
+                          disabled={carouselIndex >= featuredMaterials.length - 3}
+                          className={`p-2.5 rounded-xl border border-slate-200 transition-all ${carouselIndex >= featuredMaterials.length - 3
+                              ? 'bg-slate-100 text-slate-300 cursor-not-allowed opacity-50'
+                              : 'bg-white text-slate-800 hover:bg-slate-50 hover:border-sky-300 shadow-xs cursor-pointer'
+                            }`}
+                          title="Next Material"
+                          aria-label="Next Material"
+                        >
+                          <ChevronRight className="w-5 h-5" />
+                        </button>
+                      </div>
+
+                      <button
+                        onClick={() => {
+                          setCurrentPage('materials');
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                          window.location.hash = 'materials';
+                        }}
+                        className="inline-flex items-center space-x-1.5 text-sm font-bold text-sky-600 hover:text-sky-700 transition group"
+                      >
+                        <span>Explore All Products</span>
+                        <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </button>
+                    </div>
                   </div>
 
-                  {/* Top 3 items grid with micro-interactions */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {INITIAL_MATERIALS.slice(0, 3).map((item, index) => (
-                      <motion.div
+                  {/* ==============================================
+                      DESKTOP CAROUSEL VIEW (Hidden on Mobile)
+                     ============================================== */}
+                  <div className="hidden md:block overflow-hidden py-4 -my-4">
+                    <motion.div
+                      className="flex gap-8"
+                      animate={{ x: `calc(-${carouselIndex * (100 / 3)}% - ${carouselIndex * 21.33}px)` }}
+                      transition={{ type: "spring", stiffness: 100, damping: 20 }}
+                    >
+                      {featuredMaterials.map((item) => (
+                        <div
+                          key={item.id}
+                          className="w-[calc((100%-64px)/3)] shrink-0 bg-white rounded-2xl overflow-hidden shadow-xs hover:shadow-lg transition-all flex flex-col justify-between"
+                        >
+                          <div>
+                            <div className="relative h-48 bg-slate-100 overflow-hidden">
+                              <img
+                                src={item.image}
+                                alt={item.name}
+                                className="w-full h-full object-contain p-4 bg-white transition-transform duration-500 hover:scale-105"
+                                referrerPolicy="no-referrer"
+                              />
+                              <span className="absolute top-3 left-3 bg-white/95 text-sky-700 border border-sky-100 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                                {item.category}
+                              </span>
+                            </div>
+                            <div className="p-6">
+                              <h4 className="font-display font-extrabold text-slate-800 text-base leading-snug min-h-[48px] line-clamp-2">
+                                {item.name}
+                              </h4>
+                              <p className="text-slate-500 text-xs mt-2.5 leading-relaxed min-h-[48px] line-clamp-3">
+                                {item.description}
+                              </p>
+                            </div>
+                          </div>
+                          <div className="p-6 pt-0 mt-2 flex gap-3">
+                            <button
+                              onClick={() => handleMaterialInquiry(item.name)}
+                              className="grow text-center bg-sky-50 hover:bg-sky-100 text-sky-700 border border-sky-200 text-xs font-bold py-2.5 rounded-lg transition-colors cursor-pointer"
+                            >
+                              Ask Price
+                            </button>
+                            <a
+                              href={`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=Hello%20Shri%20kutty%20agencies%2C%20I%20am%20interested%20in%20"${encodeURIComponent(item.name)}"%20for%20my%20site.`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="grow text-center bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 rounded-lg transition-colors flex items-center justify-center space-x-1.5 shadow-sm shadow-emerald-600/10"
+                            >
+                              <MessageSquare className="w-3.5 h-3.5" />
+                              <span>WhatsApp</span>
+                            </a>
+                          </div>
+                        </div>
+                      ))}
+                    </motion.div>
+                  </div>
+
+                  {/* ==============================================
+                      MOBILE GRID VIEW (No Carousel for Mobile)
+                     ============================================== */}
+                  <div className="md:hidden grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {featuredMaterials.map((item) => (
+                      <div
                         key={item.id}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: index * 0.1 }}
-                        whileHover={{ y: -8, boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(14, 165, 233, 0.04)' }}
-                        className="bg-white rounded-2xl border border-sky-100 overflow-hidden shadow-xs hover:border-sky-200 transition-all flex flex-col justify-between"
+                        className="bg-white rounded-2xl overflow-hidden shadow-xs transition-all flex flex-col justify-between"
                       >
                         <div>
-                          <div className="relative h-48 bg-slate-100 overflow-hidden">
+                          <div className="relative h-44 bg-slate-50 overflow-hidden">
                             <img
                               src={item.image}
                               alt={item.name}
-                              className="w-full h-full object-contain p-4 bg-white transition-transform duration-500 hover:scale-105"
+                              className="w-full h-full object-contain p-4 bg-white"
                               referrerPolicy="no-referrer"
                             />
                             <span className="absolute top-3 left-3 bg-white/95 text-sky-700 border border-sky-100 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
                               {item.category}
                             </span>
                           </div>
-                          <div className="p-6">
-                            <h4 className="font-display font-extrabold text-slate-800 text-lg leading-snug">{item.name}</h4>
-                            <p className="text-slate-500 text-xs mt-2.5 leading-relaxed">{item.description}</p>
+                          <div className="p-5">
+                            <h4 className="font-display font-extrabold text-slate-800 text-base leading-snug">{item.name}</h4>
+                            <p className="text-slate-500 text-xs mt-2 leading-relaxed">{item.description}</p>
                           </div>
                         </div>
-                        <div className="p-6 pt-0 border-t border-slate-50 mt-2 flex gap-3">
+                        <div className="p-5 pt-0 mt-1 flex gap-3">
                           <button
                             onClick={() => handleMaterialInquiry(item.name)}
-                            className="grow text-center bg-sky-50 hover:bg-sky-100 text-sky-700 border border-sky-200 text-xs font-bold py-2.5 rounded-lg transition-colors cursor-pointer"
+                            className="grow text-center bg-sky-50 hover:bg-sky-100 text-sky-700 border border-sky-200 text-xs font-bold py-2.5 rounded-md transition-colors cursor-pointer"
                           >
                             Ask Price
                           </button>
@@ -132,14 +243,16 @@ export default function App() {
                             href={`https://wa.me/${CONTACT_DETAILS.phonePrimary.raw}?text=Hello%20Shri%20kutty%20agencies%2C%20I%20am%20interested%20in%20"${encodeURIComponent(item.name)}"%20for%20my%20site.`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="grow text-center bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 rounded-lg transition-colors flex items-center justify-center space-x-1.5 shadow-sm shadow-emerald-600/10"
+                            className="grow text-center bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 rounded-md transition-colors flex items-center justify-center space-x-1.5 shadow-sm shadow-emerald-600/10"
                           >
+                            <MessageSquare className="w-3.5 h-3.5" />
                             <span>WhatsApp</span>
                           </a>
                         </div>
-                      </motion.div>
+                      </div>
                     ))}
                   </div>
+
                 </div>
               </section>
 
@@ -158,7 +271,7 @@ export default function App() {
                       <p className="text-slate-600 mt-5 text-sm leading-relaxed">
                         To maintain absolute trust, Shri kutty agencies manages our proprietary fleets. From small 0.5-unit tractors for crowded neighborhood residential alleys, to 7.0-unit dumpers for large commercial developments, we have standard solutions for every Erode budget.
                       </p>
-                      
+
                       <div className="mt-8 space-y-4">
                         <div className="flex items-start space-x-3">
                           <span className="p-1.5 bg-sky-50 text-sky-600 rounded-lg font-bold font-mono text-xs mt-0.5">
@@ -195,7 +308,7 @@ export default function App() {
 
                     <div className="relative">
                       {/* Interactive block visual representation */}
-                      <motion.div 
+                      <motion.div
                         whileHover={{ scale: 1.01 }}
                         className="rounded-3xl overflow-hidden shadow-2xl border border-sky-100 max-h-96"
                       >
@@ -225,7 +338,7 @@ export default function App() {
                     </h3>
                   </div>
 
-                  <motion.div 
+                  <motion.div
                     variants={{
                       hidden: { opacity: 0 },
                       visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
@@ -236,7 +349,7 @@ export default function App() {
                     className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center"
                   >
                     {/* Quality Assured */}
-                    <motion.div 
+                    <motion.div
                       variants={{
                         hidden: { opacity: 0, y: 30 },
                         visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 80, damping: 20 } }
@@ -255,7 +368,7 @@ export default function App() {
                     </motion.div>
 
                     {/* Direct Sourcing */}
-                    <motion.div 
+                    <motion.div
                       variants={{
                         hidden: { opacity: 0, y: 30 },
                         visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 80, damping: 20 } }
@@ -274,7 +387,7 @@ export default function App() {
                     </motion.div>
 
                     {/* Strategic Network */}
-                    <motion.div 
+                    <motion.div
                       variants={{
                         hidden: { opacity: 0, y: 30 },
                         visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 80, damping: 20 } }
@@ -303,7 +416,7 @@ export default function App() {
                       Social Validation
                     </span>
                     <h3 className="text-3xl sm:text-4xl font-display font-extrabold text-slate-900 tracking-tight">
-                      Trusted Local Brand Since 2012
+                      Trusted Local Brand Since 1996
                     </h3>
                   </div>
 

@@ -39,7 +39,7 @@ export default function Header({ currentPage, setCurrentPage }: HeaderProps) {
               <span>Erode & surrounding districts, Tamil Nadu</span>
             </span>
             <span className="text-slate-500">|</span>
-            <span className="text-sky-400 font-semibold uppercase tracking-wider text-[10px]">Serving since 2012</span>
+            <span className="text-sky-400 font-semibold uppercase tracking-wider text-[10px]">Serving since 1996</span>
           </div>
           <div className="flex items-center space-x-3">
             <span>Direct Order Helper:</span>
@@ -54,8 +54,8 @@ export default function Header({ currentPage, setCurrentPage }: HeaderProps) {
       {/* Main navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
-        <button 
-          onClick={() => handleNavClick('home')} 
+        <button
+          onClick={() => handleNavClick('home')}
           className="flex items-center space-x-3 cursor-pointer text-left focus:outline-hidden"
         >
           {/* <div className="p-2 bg-sky-600 rounded-lg text-white shadow-md shadow-sky-100 flex items-center justify-center font-bold">
@@ -79,15 +79,14 @@ export default function Header({ currentPage, setCurrentPage }: HeaderProps) {
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`relative px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 cursor-pointer ${
-                  isActive 
-                    ? 'text-sky-600 font-bold bg-sky-50' 
+                className={`relative px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 cursor-pointer ${isActive
+                    ? 'text-sky-600 font-bold bg-sky-50'
                     : 'text-slate-600 hover:text-sky-600 hover:bg-slate-50'
-                }`}
+                  }`}
               >
                 {item.label}
                 {isActive && (
-                  <motion.div 
+                  <motion.div
                     layoutId="activeIndicator"
                     className="absolute bottom-0 left-4 right-4 h-0.5 bg-sky-600 rounded-full"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
@@ -150,11 +149,10 @@ export default function Header({ currentPage, setCurrentPage }: HeaderProps) {
                   <button
                     key={item.id}
                     onClick={() => handleNavClick(item.id)}
-                    className={`block w-full text-left px-4 py-3 rounded-lg text-base font-bold transition-colors cursor-pointer ${
-                      isActive 
-                        ? 'bg-sky-600 text-white' 
+                    className={`block w-full text-left px-4 py-3 rounded-lg text-base font-bold transition-colors cursor-pointer ${isActive
+                        ? 'bg-sky-600 text-white'
                         : 'text-slate-700 hover:bg-slate-100 hover:text-sky-600'
-                    }`}
+                      }`}
                   >
                     {item.label}
                   </button>

@@ -6,7 +6,7 @@ export default function About() {
   const whyChooseUs = [
     {
       title: 'Premium Quality Materials',
-      desc: 'Our sands are washed twice to remove silt content. Jelly stones originate from graded blue granite quarries around Erode.',
+      desc: 'Our sands are washed twice to remove silt content. Graded aggregates originate from blue granite quarries around Erode.',
       icon: Award,
       badgeColor: 'bg-sky-50 text-sky-600 border-sky-100'
     },
@@ -30,7 +30,7 @@ export default function About() {
     },
     {
       title: 'Trusted Local Supplier',
-      desc: 'Deep roots in the community since 2012. We understand local clay soils, cement grading combinations and foundation requirements.',
+      desc: 'Deep roots in the community since 1996. We understand local clay soils, cement grading combinations and foundation requirements.',
       icon: Users,
       badgeColor: 'bg-sky-50 text-sky-600 border-sky-100'
     },
@@ -45,7 +45,7 @@ export default function About() {
   return (
     <section id="about-section" className="py-16 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Intro Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
           <motion.div
@@ -61,7 +61,7 @@ export default function About() {
               A Trusted Construction Materials Partner in Erode
             </h2>
             <p className="text-slate-600 mt-4 text-sm sm:text-base leading-relaxed">
-              Established in 2012 with a single dumper tractor, <strong>Shri kutty agencies</strong> has grown to become Erode's leading independent construction materials supplier and transport agency. We deal directly with local quarry owners, clay kiln operators and civil organizations.
+              Established in 1996 with a single dumper tractor, <strong>Shri kutty agencies</strong> has grown to become Erode's leading independent construction materials supplier and transport agency. We deal directly with local quarry owners, clay kiln operators and civil organizations.
             </p>
             <p className="text-slate-600 mt-4 text-sm leading-relaxed">
               Serving Perundurai, Gobichettipalayam, Bhavani, and nearby zones, we deliver Crusher Sand, high-compressive masonry Red clay Bricks, structural gravel, and specific basement packing soils. Our primary operating values center around precise volumetric measurement and customer satisfaction.
@@ -75,8 +75,8 @@ export default function About() {
                 'Pre-Scheduled Night Time Dispatches',
                 'Staff Support over Phone/WhatsApp'
               ].map((value, i) => (
-                <motion.div 
-                  key={i} 
+                <motion.div
+                  key={i}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -90,7 +90,7 @@ export default function About() {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -100,7 +100,7 @@ export default function About() {
             {/* Visual stacking style */}
             <div className="absolute inset-0 bg-sky-600/10 rounded-3xl translate-x-3 translate-y-3"></div>
             <div className="relative bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm space-y-6">
-              
+
               {/* Highlight card info */}
               <div className="flex items-start space-x-4">
                 <div className="p-3 bg-sky-600 text-white rounded-2xl">
@@ -132,7 +132,7 @@ export default function About() {
 
         {/* Vision & Mission Row */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-          
+
           {/* Vision card */}
           <div className="bg-white p-8 rounded-3xl border border-slate-100 shadow-xs relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-8 text-slate-100 group-hover:text-sky-50/50 transition-colors">
@@ -181,7 +181,7 @@ export default function About() {
             </p>
           </div>
 
-          <motion.div 
+          <motion.div
             variants={{
               hidden: { opacity: 0 },
               visible: { opacity: 1, transition: { staggerChildren: 0.08 } }

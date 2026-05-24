@@ -6,46 +6,72 @@
   --font-display: "Outfit", var(--font-sans);
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
-  /* Custom palette colors remapped to premium Sky Blue colorways */
-  --color-brand-50: #f0f9ff;
-  --color-brand-100: #e0f2fe;
-  --color-brand-200: #bae6fd;
-  --color-brand-500: #0ea5e9;
-  --color-brand-600: #0284c7;
-  --color-brand-700: #0369a1;
-  --color-brand-800: #075985;
-  --color-brand-900: #0c4a6e;
-  --color-brand-950: #082f49;
+  /* Custom palette colors mapped to primary Teal #06b1a8 colorways */
+  --color-brand-50: #e6f7f6;
+  --color-brand-100: #ccf0ee;
+  --color-brand-200: #99e1dd;
+  --color-brand-300: #66d1cb;
+  --color-brand-400: #33c2ba;
+  --color-brand-500: #06b1a8;
+  --color-brand-600: #059e96;
+  --color-brand-700: #048b84;
+  --color-brand-800: #037771;
+  --color-brand-900: #02635e;
+  --color-brand-950: #01413e;
 
-  /* Remapping default tailwind blue to correspond to the new Sky Blue identity */
-  --color-blue-50: #f0f9ff;
-  --color-blue-100: #e0f2fe;
-  --color-blue-200: #bae6fd;
-  --color-blue-300: #7dd3fc;
-  --color-blue-400: #38bdf8;
-  --color-blue-500: #0ea5e9;
-  --color-blue-600: #0284c7;
-  --color-blue-700: #0369a1;
-  --color-blue-800: #075985;
-  --color-blue-900: #0c4a6e;
-  --color-blue-950: #082f49;
+  /* Remapping default tailwind blue to correspond to the Teal #06b1a8 identity */
+  --color-blue-50: #e6f7f6;
+  --color-blue-100: #ccf0ee;
+  --color-blue-200: #99e1dd;
+  --color-blue-300: #66d1cb;
+  --color-blue-400: #33c2ba;
+  --color-blue-500: #06b1a8;
+  --color-blue-600: #059e96;
+  --color-blue-700: #048b84;
+  --color-blue-800: #037771;
+  --color-blue-900: #02635e;
+  --color-blue-950: #01413e;
 
-  /* Enhancing standard green and emerald color scales to support the Green/White theme accents */
+  /* Remapping default tailwind sky to correspond to the Teal #06b1a8 identity */
+  --color-sky-50: #e6f7f6;
+  --color-sky-100: #ccf0ee;
+  --color-sky-200: #99e1dd;
+  --color-sky-300: #66d1cb;
+  --color-sky-400: #33c2ba;
+  --color-sky-500: #06b1a8;
+  --color-sky-600: #059e96;
+  --color-sky-700: #048b84;
+  --color-sky-800: #037771;
+  --color-sky-900: #02635e;
+  --color-sky-950: #01413e;
+
+  /* Remapping default green to a fresh, trustworthy and sophisticated forest-emerald green secondary colorway */
   --color-green-50: #f0fdf4;
   --color-green-100: #dcfce7;
   --color-green-200: #bbf7d0;
-  --color-green-500: #22c55e;
-  --color-green-600: #16a34a;
-  --color-green-700: #15803d;
+  --color-green-300: #86efac;
+  --color-green-400: #4ade80;
+  --color-green-500: #10b981;
+  --color-green-600: #059669;
+  --color-green-700: #047857;
+  --color-green-800: #065f46;
+  --color-green-900: #064e3b;
+  --color-green-950: #022c22;
 
+  /* Remapping default emerald to a fresh, trustworthy and sophisticated forest-emerald green secondary colorway */
   --color-emerald-50: #f0fdf4;
   --color-emerald-100: #dcfce7;
   --color-emerald-200: #bbf7d0;
-  --color-emerald-500: #22c55e;
-  --color-emerald-600: #16a34a;
-  --color-emerald-700: #15803d;
+  --color-emerald-300: #86efac;
+  --color-emerald-400: #4ade80;
+  --color-emerald-500: #10b981;
+  --color-emerald-600: #059669;
+  --color-emerald-700: #047857;
+  --color-emerald-800: #065f46;
+  --color-emerald-900: #064e3b;
+  --color-emerald-950: #022c22;
   
-  --color-accent-amber: #f59e0b;
+  --color-accent-amber: #cca025;
 }
 
 /* Base style resets and customizations */

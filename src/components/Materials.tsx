@@ -12,11 +12,11 @@ interface MaterialsProps {
 export default function Materials({ onContactClick }: MaterialsProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
-  const [sortBy, setSortBy] = useState<'name-asc' | 'name-desc' | 'availability'>('name-asc');
+  const [sortBy, setSortBy] = useState<'default' | 'name-asc' | 'name-desc' | 'availability'>('default');
   const [showApiDoc, setShowApiDoc] = useState(false);
 
   // Categories list
-  const categories: string[] = ['All', 'Cement', 'Sand', 'Jelly Stones', 'Bricks'];
+  const categories: string[] = ['All', 'Sand', 'Aggregates', 'Bricks', 'Cement', 'Wall Putty'];
 
   // Filter & Sort Logic
   const filteredAndSortedMaterials = useMemo(() => {
@@ -39,16 +39,13 @@ export default function Materials({ onContactClick }: MaterialsProps) {
     }
 
     // Sort
-    result.sort((a, b) => {
-      if (sortBy === 'name-asc') {
-        return a.name.localeCompare(b.name);
-      } else if (sortBy === 'name-desc') {
-        return b.name.localeCompare(a.name);
-      } else if (sortBy === 'availability') {
-        return a.availability.localeCompare(b.availability);
-      }
-      return 0;
-    });
+    if (sortBy === 'name-asc') {
+      result.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (sortBy === 'name-desc') {
+      result.sort((a, b) => b.name.localeCompare(a.name));
+    } else if (sortBy === 'availability') {
+      result.sort((a, b) => a.availability.localeCompare(b.availability));
+    }
 
     return result;
   }, [searchQuery, selectedCategory, sortBy]);
@@ -139,65 +136,62 @@ export default function Materials({ onContactClick }: MaterialsProps) {
         </AnimatePresence>
 
         {/* Dynamic Controls Bar: Search, Category, Sorting */}
-        <div className="bg-white p-4 sm:p-6 rounded-2xl border border-slate-100 shadow-xs mb-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
-
+        <div className="bg-white p-4 sm:p-5 rounded-2xl border border-slate-100 shadow-xs mb-8">
+          {/* Search & Sort on the same row */}
+          <div className="flex flex-col sm:flex-row gap-3 items-center w-full">
             {/* Search Input bar */}
-            <div className="lg:col-span-5 relative">
+            <div className="relative flex-1 w-full">
               <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4.5 h-4.5 text-slate-400" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search sand, bricks, aggregates, jelly sizes..."
-                className="w-full bg-slate-50 border border-slate-200 focus:border-sky-500 focus:bg-white text-slate-800 placeholder-slate-400 pl-11 pr-4 py-3 rounded-xl text-sm outline-hidden font-medium transition-all"
+                placeholder="Search sand, bricks, aggregates, putty..."
+                className="w-full bg-slate-50 border border-slate-200 focus:border-sky-500 focus:bg-white text-slate-800 placeholder-slate-400 pl-11 pr-4 py-3 rounded-xl text-xs sm:text-sm outline-hidden font-medium transition-all"
               />
             </div>
 
-            {/* Category Select Filters for Mobile */}
-            <div className="flex lg:hidden items-center space-x-2 font-semibold text-xs text-slate-500">
-              <Layers className="w-4 h-4 text-sky-500" />
-              <span>Category Filter:</span>
-            </div>
-
             {/* Sorting controls dropdown */}
-            <div className="lg:col-span-3 flex items-center space-x-2">
-              <ArrowUpDown className="w-4.5 h-4.5 text-slate-400 shrink-0" />
+            <div className="flex items-center space-x-2 w-full sm:w-auto shrink-0">
+              <ArrowUpDown className="w-4 h-4 text-slate-400 shrink-0 hidden sm:block" />
               <select
                 value={sortBy}
                 onChange={(e: any) => setSortBy(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 focus:border-sky-500 focus:bg-white text-slate-700 py-3 px-3.5 rounded-xl text-sm outline-hidden font-semibold transition"
+                className="w-full sm:w-48 bg-slate-50 border border-slate-200 focus:border-sky-500 focus:bg-white text-slate-700 py-3 px-3.5 rounded-xl text-xs sm:text-sm outline-hidden font-semibold transition cursor-pointer"
               >
-                <option value="name-asc">Sort A to Z (Alphabetical)</option>
-                <option value="name-desc">Sort Z to A (Alphabetical)</option>
-                <option value="availability">Sort by Stock Status</option>
+                <option value="default">Default Order</option>
+                <option value="name-asc">Sort A to Z</option>
+                <option value="name-desc">Sort Z to A</option>
+                <option value="availability">Stock Status</option>
               </select>
-            </div>
-
-            {/* Quick Helper Banner */}
-            <div className="lg:col-span-4 bg-sky-50 p-3 rounded-xl border border-sky-100 hidden sm:flex items-center space-x-2 text-xs text-sky-700">
-              <ShieldCheck className="w-4.5 h-4.5 text-sky-600 shrink-0" />
-              <span>No middleman charge. Select items to ping our Erode dispatch desks directly on WhatsApp!</span>
             </div>
           </div>
 
-          {/* Desktop Categories Scroll List */}
-          <div className="mt-5 border-t border-slate-100 pt-4 flex flex-wrap gap-2">
-            {categories.map((cat) => {
-              const isSelected = selectedCategory === cat;
-              return (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`px-4.5 py-2.5 rounded-full text-xs font-bold transition-all cursor-pointer ${isSelected
-                    ? 'bg-sky-600 text-white shadow-md shadow-sky-100'
-                    : 'bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-sky-900'
-                    }`}
-                >
-                  {cat === 'All' ? '🗂️ View All' : cat}
-                </button>
-              );
-            })}
+          {/* Categories Row */}
+          <div className="mt-4 pt-4 border-t border-slate-100">
+            <div className="text-[11px] font-bold text-slate-450 uppercase tracking-wider mb-2.5 font-mono flex items-center space-x-1.5">
+              <Layers className="w-3.5 h-3.5 text-sky-500" />
+              <span>Filter Categories</span>
+            </div>
+            
+            {/* Horizontal touch scrollable list on mobile, wraps on desktop with hidden scrollbar */}
+            <div className="flex items-center gap-1.5 overflow-x-auto pb-1.5 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap scrollbar-none">
+              {categories.map((cat) => {
+                const isSelected = selectedCategory === cat;
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => setSelectedCategory(cat)}
+                    className={`px-4.5 py-2.5 rounded-full text-xs font-bold transition-all cursor-pointer whitespace-nowrap shrink-0 ${isSelected
+                      ? 'bg-sky-600 text-white shadow-md shadow-sky-100'
+                      : 'bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-sky-900'
+                      }`}
+                  >
+                    {cat}
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
 
@@ -326,7 +320,7 @@ export default function Materials({ onContactClick }: MaterialsProps) {
                 Not sure about quantity calculation rules?
               </h3>
               <p className="text-slate-200 text-sm mt-2 max-w-2xl leading-relaxed">
-                Tell us your building base sqft (foundation volume, wall height, or concrete roof thickness), and our civil supervisors will estimate the exact units of M-Sand, Jelly, and Bricks required.
+                Tell us your building base sqft (foundation volume, wall height, or concrete roof thickness), and our civil supervisors will estimate the exact units of M-Sand, Aggregates, and Bricks required.
               </p>
             </div>
             <div className="lg:col-span-4 flex justify-start lg:justify-end">

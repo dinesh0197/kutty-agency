@@ -53,9 +53,9 @@ export default function Hero({ setCurrentPage }: HeroProps) {
     'Premium M-Sand (Concrete)',
     'Super Plastering P-Sand',
     'Grade-A River Sand (R-Sand)',
-    '20mm Jelly Stones (Cast)',
-    'High-Strength Red Bricks',
-    'Coarse Basement Filling Soil'
+    '20mm Aggregates (Structural Casting)',
+    'High-Strength Chamber Red Bricks',
+    'High-Density Basement Filling Soil'
   ];
 
   const scrollHandler = (pageId: string) => {
@@ -122,7 +122,7 @@ export default function Hero({ setCurrentPage }: HeroProps) {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mt-6 text-slate-600 text-base sm:text-lg max-w-2xl leading-relaxed"
             >
-              Get washed M-Sand, smooth Plastering Sand, Blue Metal Jelly aggregates, chamber clay bricks and basement grading soil delivered to your site with our own custom dumper fleets.
+              Get washed M-Sand, smooth Plastering Sand, Blue Metal aggregates, chamber clay bricks and basement grading soil delivered to your site with our own custom dumper fleets.
             </motion.p>
 
             {/* Modern Action buttons with High Contrast colors */}

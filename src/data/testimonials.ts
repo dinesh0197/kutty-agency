@@ -7,7 +7,7 @@ export const USER_TESTIMONIALS: TestimonialItem[] = [
     location: 'Perundurai, Erode',
     role: 'Contractor',
     rating: 5,
-    text: 'Kutty Agency is our go-to supplier for M-Sand and Jelly stones. Their own fleet of various trucks ensures we get materials like 20mm Jelly on time, even under critical deadlines. Their honesty with material quantity measurement is highly commendable.',
+    text: 'Kutty Agency is our go-to supplier for M-Sand and aggregates. Their own fleet of various trucks ensures we get materials like 20mm aggregates on time, even under critical deadlines. Their honesty with material quantity measurement is highly commendable.',
     avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80'
   },
   {

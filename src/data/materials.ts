@@ -4,6 +4,15 @@ import { MaterialItem } from '../types';
  * Sample JSON Product Dataset (JSON String representation for future API backend ingestion or file exports)
  */
 export const SAMPLE_MATERIALS_JSON = JSON.stringify([
+  // SAND CATEGORY
+  {
+    "id": "mat-river-sand",
+    "name": "Grade-A River Sand (R-Sand)",
+    "category": "Sand",
+    "description": "Naturally obtained river sand filtered for high silica content, ideal for plastering and general masonry construction.",
+    "availability": "Limited Stock",
+    "image": "/materials/river_sand.webp"
+  },
   {
     "id": "mat-m-sand",
     "name": "Premium M-Sand (Concrete)",
@@ -21,93 +30,91 @@ export const SAMPLE_MATERIALS_JSON = JSON.stringify([
     "image": "/materials/plastering_p_sand.webp"
   },
   {
-    "id": "mat-r-sand",
-    "name": "Grade-A River Sand (R-Sand)",
+    "id": "mat-soil-red",
+    "name": "Premium Red Soil (Gardening)",
     "category": "Sand",
-    "description": "Naturally obtained river sand filtered for high silica content, ideal for plastering and general masonry construction.",
-    "availability": "Limited Stock",
-    "image": "/materials/river_sand.webp"
+    "description": "Premium iron-rich fine red ground soil, optimal for landscaping, rooftop/backyard gardens, and farm leveling around Erode.",
+    "availability": "Pre-Order",
+    "image": "/materials/organic_red_soil.webp"
   },
-  // {
-  //   "id": "mat-crusher-sand",
-  //   "name": "Screened Crusher Sand",
-  //   "category": "Sand",
-  //   "description": "Affordable crusher dust sand screened for structural floor leveling, sub-base filling, and heavy structural backfills.",
-  //   "availability": "In Stock",
-  //   "image": "https://images.unsplash.com/photo-1531834685032-c34bf0d8b2d1?auto=format&fit=crop&w=600&q=80"
-  // },
+  {
+    "id": "mat-soil-basement",
+    "name": "High-Density Basement Filling Soil",
+    "category": "Sand",
+    "description": "High-density structural filling soil, perfect for packing and compacting inside newly cast concrete building basements.",
+    "availability": "In Stock",
+    "image": "/materials/basement_filling_soil.webp"
+  },
+
+  // AGGREGATES CATEGORY
   {
     "id": "mat-6mm-jelly",
-    "name": "6mm Jelly Stones (Blue Metal)",
-    "category": "Jelly Stones",
+    "name": "6mm Aggregates (Blue Metal)",
+    "category": "Aggregates",
     "description": "Premium 6mm crushed construction aggregate, ideal for architectural tiles, hollow block production, and asphalt surface coats.",
     "availability": "In Stock",
     "image": "/materials/6mm_jelly.webp"
   },
   {
     "id": "mat-20mm-jelly",
-    "name": "20mm Jelly Stones (Structural Casting)",
-    "category": "Jelly Stones",
+    "name": "20mm Aggregates (Structural Casting)",
+    "category": "Aggregates",
     "description": "High-durability 20mm aggregates, the standard size heavily recommended for all RCC roofs, beams, slabs, and columns.",
     "availability": "Fast Delivery",
     "image": "/materials/20mm_jelly.webp"
   },
   {
     "id": "mat-40mm-jelly",
-    "name": "40mm Jelly Stones (Sub-base)",
-    "category": "Jelly Stones",
+    "name": "40mm Aggregates (Sub-base)",
+    "category": "Aggregates",
     "description": "Robust 40mm aggregates, perfect for heavy railway ballast, road base layering, and solid foundation underlayment.",
     "availability": "In Stock",
     "image": "/materials/40mm_jelly.webp"
   },
   {
     "id": "mat-crusher-stones",
-    "name": "Heavy Crusher Stones (Rubble) or RR stone",
-    "category": "Jelly Stones",
+    "name": "Heavy Crusher Stones (RR Stone)",
+    "category": "Aggregates",
     "description": "Large irregular crusher stones suitable for building secure retaining walls, strong stone foundations, and land barriers.",
     "availability": "In Stock",
     "image": "/materials/rubble_crusher_stone.webp"
   },
+
+  // BRICKS CATEGORY
   {
     "id": "mat-red-clay-bricks",
-    "name": "High-Strength chamber Red Bricks",
+    "name": "High-Strength Chamber Red Bricks",
     "category": "Bricks",
     "description": "Locally baked structural red clay bricks with premium compressive strength, optimal thermal insulation, and minimal water absorbency.",
     "availability": "Fast Delivery",
     "image": "/materials/redbrick.webp"
   },
   {
-    "id": "mat-soil-basement",
-    "name": "zBasement Filling Soil",
-    "category": "Sand",
-    "description": "High-density structural filling soil, perfect for packing and compacting inside newly cast concrete building basements.",
+    "id": "mat-bricks-flyash",
+    "name": "Flyash Bricks (Flash Bricks)",
+    "category": "Bricks",
+    "description": "Eco-friendly, lightweight flyash / flash bricks with uniform shape and excellent thermal insulation.",
     "availability": "In Stock",
-    "image": "/materials/basement_filling_soil.webp"
+    "image": "/materials/flyash brick.webp"
   },
   {
-    "id": "mat-soil-red",
-    "name": "zGarding soil or Red soil",
-    "category": "Sand",
-    "description": "Premium iron-rich fine red ground soil, optimal for landscaping, rooftop/backyard gardens, and farm leveling around Erode.",
-    "availability": "Pre-Order",
-    "image": "/materials/organic_red_soil.webp"
+    "id": "mat-bricks-solid",
+    "name": "Premium Solid Concrete Bricks",
+    "category": "Bricks",
+    "description": "High-grade solid concrete blocks offering superior strength, load bearing, and stability for foundational masonry.",
+    "availability": "In Stock",
+    "image": "/materials/solid bricks 4 & 6.webp"
   },
-  // {
-  //   "id": "mat-soil-grading",
-  //   "name": "Dense Foundation Grading Soil",
-  //   "category": "Soil Filling",
-  //   "description": "Premium gravel-blend heavy grading soil for establishing level compounds and sturdy sub-base foundation profiles.",
-  //   "availability": "In Stock",
-  //   "image": "https://images.unsplash.com/photo-1515150144380-bca9f1650ed9?auto=format&fit=crop&w=600&q=80"
-  // },
   {
-    "id": "mat-mix-aggregates",
-    "name": "Mixed Structural Blue Metal Aggregates",
-    "category": "Aggregates",
-    "description": "Premium blended grading aggregates for high-efficiency concrete batches, civil infrastructure work, and rural roads packing.",
-    "availability": "Fast Delivery",
-    "image": ""
+    "id": "mat-bricks-hollow",
+    "name": "Premium Hollow Concrete Bricks",
+    "category": "Bricks",
+    "description": "Lightweight and thermal-efficient hollow concrete blocks designed for faster and cost-effective wall construction.",
+    "availability": "In Stock",
+    "image": "/materials/Soild & Hollow bricks.webp"
   },
+
+  // CEMENT CATEGORY
   {
     "id": "mat-cement-ramco",
     "name": "Ramco Cement",
@@ -125,20 +132,20 @@ export const SAMPLE_MATERIALS_JSON = JSON.stringify([
     "image": "/materials/ultratech cement.webp"
   },
   {
+    "id": "mat-cement-chettinad",
+    "name": "Chettainad Cement",
+    "category": "Cement",
+    "description": "High-durability sulphate-resistant cement ideal for concrete, screeds, plastering, and general building masonry.",
+    "availability": "In Stock",
+    "image": "/materials/Jsw cement.webp"
+  },
+  {
     "id": "mat-cement-dalmia",
     "name": "Dalmia Cement",
     "category": "Cement",
     "description": "Trusted cement brand known for quick setting time and exceptional compressive strength.",
     "availability": "In Stock",
     "image": "/materials/dalmia cement.webp"
-  },
-  {
-    "id": "mat-cement-jsw",
-    "name": "JSW Cement",
-    "category": "Cement",
-    "description": "Eco-friendly slag cement offering great resistance against chemical attacks and improved finish.",
-    "availability": "Fast Delivery",
-    "image": "/materials/Jsw cement.webp"
   },
   {
     "id": "mat-cement-priya",
@@ -148,37 +155,31 @@ export const SAMPLE_MATERIALS_JSON = JSON.stringify([
     "availability": "In Stock",
     "image": "/materials/priya cement.webp"
   },
+
+  // WALL PUTTY CATEGORY
   {
-    "id": "mat-bricks-flyash",
-    "name": "Flyash Bricks",
-    "category": "Bricks",
-    "description": "Eco-friendly, lightweight flyash bricks with uniform shape and excellent thermal insulation.",
+    "id": "mat-putty-ramco",
+    "name": "Ramco Putty",
+    "category": "Wall Putty",
+    "description": "Premium water-resistant white cement-based wall putty providing unmatched bonding, coverage, and extra-smooth finishes.",
     "availability": "In Stock",
-    "image": "/materials/flyash brick.webp"
+    "image": "/materials/tile paste & wall patty paste.webp"
   },
   {
-    "id": "mat-bricks-paste",
-    "name": "Tile Paste & Wall Patty Paste",
-    "category": "Bricks",
-    "description": "High-adhesion tile fixing paste and smooth wall patty for flawless surface finishing.",
+    "id": "mat-putty-birla",
+    "name": "Birla Putty",
+    "category": "Wall Putty",
+    "description": "Birla White WallCare Putty prevents flaking, protects your expensive paint from dampness, and provides high gloss.",
     "availability": "In Stock",
-    "image": "/materials/ramco tile fix.webp"
+    "image": "/materials/tile paste & wall patty paste.webp"
   },
   {
-    "id": "mat-bricks-hollow-6",
-    "name": "Solid & Hollow Bricks (6\")",
-    "category": "Bricks",
-    "description": "Sturdy 6-inch hollow and solid concrete blocks for fast, cost-effective wall construction.",
+    "id": "mat-putty-asian",
+    "name": "Asian Putty",
+    "category": "Wall Putty",
+    "description": "Premium acrylic wall putty by Asian Paints for interior/exterior concrete walls with excellent durability & superior whiteness.",
     "availability": "In Stock",
-    "image": "/materials/solid bricks 4 & 6.webp"
-  },
-  {
-    "id": "mat-bricks-hollow-4",
-    "name": "Solid & Hollow Bricks (4\")",
-    "category": "Bricks",
-    "description": "4-inch solid and hollow blocks ideal for partition walls and non-load-bearing structures.",
-    "availability": "In Stock",
-    "image": "/materials/solid bricks 4 & 6.webp"
+    "image": "/materials/tile paste & wall patty paste.webp"
   }
 ], null, 2);
 

@@ -2,7 +2,7 @@
  * Kutty Agency Website Types
  */
 
-export type MaterialCategory = 'Sand' | 'Jelly Stones' | 'Bricks' | 'Soil Filling' | 'Aggregates';
+export type MaterialCategory = 'Sand' | 'Aggregates' | 'Bricks' | 'Cement' | 'Wall Putty';
 
 export interface MaterialItem {
   id: string;

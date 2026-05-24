@@ -17,19 +17,24 @@ export default function Contact({ prefilledMaterial = '' }: ContactProps) {
   const [submitted, setSubmitted] = useState(false);
 
   const materialsList = [
-    'M Sand',
-    'R Sand',
-    'P Sand',
-    'Crusher Sand',
-    '20mm Jelly',
-    '6mm Jelly',
-    '40mm Jelly',
-    'Crusher Stones',
-    'Basement Filling Soil',
+    'River Sand (R-Sand)',
+    'M-Sand (Concrete)',
+    'P-Sand (Plastering)',
     'Red Soil',
-    'Grading Soil',
-    'Bricks',
-    'Aggregates',
+    'Filling Soil',
+    '6mm Aggregates',
+    '20mm Aggregates',
+    '40mm Aggregates',
+    'RR Stone / Rubble',
+    'Red Bricks',
+    'Flyash / Flash Bricks',
+    'Solid Bricks',
+    'Hollow Bricks',
+    'Ramco Cement',
+    'Ultratech Cement',
+    'Chettainad Cement',
+    'Dalmia Cement',
+    'Priya Cement',
     'Custom Mixed Order'
   ];
 
@@ -307,7 +312,7 @@ export default function Contact({ prefilledMaterial = '' }: ContactProps) {
                       rows={4}
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="e.g. Need 4.0 Unit standard tipper for 20mm Jelly stone at Bhavani. Concrete roof is tomorrow morning."
+                      placeholder="e.g. Need 4.0 Unit standard tipper for 20mm Aggregates at Bhavani. Concrete roof is tomorrow morning."
                       className="w-full bg-slate-50 border border-slate-200 focus:border-blue-500 focus:bg-white text-slate-800 placeholder-slate-400 p-3.5 rounded-xl text-sm outline-hidden font-medium transition resize-none"
                     ></textarea>
                   </div>
